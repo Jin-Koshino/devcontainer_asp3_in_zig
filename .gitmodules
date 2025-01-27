@@ -1,0 +1,4 @@
+[submodule "asp3_in_zig"]
+	path = asp3_in_zig
+	url = https://github.com/Jin-Koshino/asp3_in_zig-WIP-
+	branch = master
