@@ -14,6 +14,11 @@ RUN apt-get update && apt-get install -y git qemu-system-arm rbenv libssl-dev li
     && ln -s /usr/share/zig-linux-x86_64-0.12.1/zig /usr/bin/zig \
     && rm gcc-arm-none-eabi-9-2020-q2-update-x86_64-linux.tar.bz2 \
     && rm zig-linux-x86_64-0.12.1.tar.xz 
+
+RUN git clone https://github.com/zigtools/zls \
+    && cd zls \
+    && git checkout 0.12.0 \
+    && zig build -Doptimize=ReleaseSafe
     
 WORKDIR /home/vscode
 RUN echo 'export PATH="/home/.rbenv/bin:$PATH"' >> .bashrc \
